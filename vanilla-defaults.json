@@ -414,7 +414,7 @@
     "metal.fragments": 10000,
     "metal.ore": 10000,
     "metal.plate.torso": 1,
-    "metal.refined": 100,
+    "metal.refined": 10000,
     "metalblade": 20,
     "metalpipe": 20,
     "metalspring": 20,
