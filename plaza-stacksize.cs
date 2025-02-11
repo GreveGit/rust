@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
-using Oxide.Core;
-using Oxide.Core.Libraries;
-using Oxide.Core.Libraries.Covalence;
-using Oxide.Core.Plugins;
+using Carbon.Core;
+using Carbon.Core.Libraries;
+using Carbon.Core.Libraries.Covalence;
+using Carbon.Core.Plugins;
 using UnityEngine;
 
-namespace Oxide.Plugins
+namespace Carbon.Plugins
 {
     [Info("plaza-stacksize", "Plugin av Greve - For Plaza RUST", "1.0.0")]
     [Description("Tillater konfigurasjon av de fleste gjenstander for maks stabelstørrelse.")]
@@ -472,7 +472,7 @@ namespace Oxide.Plugins
                 vanillaStackSizes.Add(itemDefinition.shortname, itemDefinition.stackable);
             }
 
-            Interface.Oxide.DataFileSystem.WriteObject(nameof(StackSizeController) + "_vanilla-defaults",
+            Interface.Carbon.DataFileSystem.WriteObject(nameof(StackSizeController) + "_vanilla-defaults",
                 vanillaStackSizes);
 
             SetStackSizes();
@@ -511,7 +511,7 @@ namespace Oxide.Plugins
 
             _vanillaDefaults = JsonConvert.DeserializeObject<Dictionary<string, int>>(response);
 
-            Interface.Oxide.DataFileSystem.WriteObject(nameof(StackSizeController) +
+            Interface.Carbon.DataFileSystem.WriteObject(nameof(StackSizeController) +
                     "_vanilla-defaults", _vanillaDefaults);
 
             // TODO: Consider refactoring workflow to avoid ambiguity
