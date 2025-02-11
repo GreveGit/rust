@@ -10,14 +10,14 @@ using UnityEngine;
 
 namespace Oxide.Plugins
 {
-    [Info("plaza-stacksize", "AnExiledDev/patched by chrome", "4.1.3")]
-    [Description("Allows configuration of most items max stack size.")]
+    [Info("plaza-stacksize", "Plugin av Greve - For Plaza RUST", "1.0.0")]
+    [Description("Tillater konfigurasjon av de fleste gjenstander for maks stabelstørrelse.")]
     class StackSizeController : CovalencePlugin
     {
         [PluginReference]
         Plugin AirFuel, GetToDaChoppa, VehicleVendorOptions;
 
-        private const string _vanillaDefaultsUri = "https://raw.githubusercontent.com/AnExiledDev/StackSizeController/master/vanilla-defaults.json";
+        private const string _vanillaDefaultsUri = "https://raw.githubusercontent.com/EnsureStudioGreve/rust/master/vanilla-defaults.json";
 
         private Configuration _config;
         private Dictionary<string, int> _vanillaDefaults;
@@ -237,11 +237,11 @@ namespace Oxide.Plugins
             lang.RegisterMessages(new Dictionary<string, string>
             {
                 ["NotEnoughArguments"] = "This command requires {0} arguments.",
-                ["InvalidItemShortnameOrId"] =
-                    "Item shortname or id is incorrect. Try stacksizecontroller.itemsearch [partial item name]",
+                ["InvalidItemShortnameOrId"] = "Item shortname or id is incorrect. Try stacksizecontroller.itemsearch [partial item name]",
                 ["InvalidCategory"] = "Category not found. Try stacksizecontroller.listcategories",
                 ["OperationSuccessful"] = "Operation completed successfully.",
-            }, this);
+            }, 
+            this);
         }
 
         private string GetMessage(string key)
